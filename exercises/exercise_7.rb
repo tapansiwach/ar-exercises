@@ -10,3 +10,17 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+print "enter name of a store: "
+storeName = gets.chomp
+
+newStore = Store.create(
+  name: storeName,
+  mens_apparel: true
+)
+
+# display errors if newStore is not valid
+if !newStore.valid?\
+  puts "\nErrors occured during store creation..."
+  puts newStore.errors.full_messages
+end
+
