@@ -8,12 +8,13 @@ class Employee < ActiveRecord::Base
     less_than_or_equal_to: 200
   }
   validates :store, presence: true
-  before_create :generate_password
+  after_create :generate_password
 
   private
   def generate_password
     chars = [*"a".."z", *"A".."Z", *"0".."9"]
     self.password = Array.new(8) { chars.sample }.join
+    self.save
   end
   
 end
