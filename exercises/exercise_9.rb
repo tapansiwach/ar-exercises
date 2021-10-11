@@ -11,7 +11,7 @@ require_relative './exercise_8'
 # Make sure non-empty stores cannot be destroyed
 @store1 = Store.find(1)
 if @store1.destroy
-  puts "Store destroyed! It has #{@store1.employees.size} =/"
+  puts "Store destroyed! It has #{@store1.employees.size} employees"
 else
   puts "Could not destroy store :)"
 end

@@ -19,7 +19,7 @@ newStore = Store.create(
 )
 
 # display errors if newStore is not valid
-if !newStore.valid?\
+if !newStore.valid?
   puts "\nErrors occured during store creation..."
   puts newStore.errors.full_messages
 end
